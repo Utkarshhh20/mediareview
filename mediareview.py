@@ -15,6 +15,8 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
 import textblob as tb
+
+st.set_page_config(page_title='Media Review', page_icon='📰', layout="wide",initial_sidebar_state='collapsed')
 data = pd.read_csv("fake_or_real_news.csv")
 
 x = np.array(data["title"])
