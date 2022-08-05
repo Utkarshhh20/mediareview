@@ -1,0 +1,8 @@
+streamlit
+numpy
+pandas
+hydralit
+sklearn
+newscatcherapi
+nltk
+textblob
