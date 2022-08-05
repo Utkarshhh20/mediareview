@@ -15,7 +15,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
 import textblob as tb
-data = pd.read_csv(r"C:\Users\Utki\Desktop\code\hackathon\archive\fake_or_real_news.csv")
+data = pd.read_csv("fake_or_real_news.csv")
 
 x = np.array(data["title"])
 y = np.array(data["label"])
