@@ -291,6 +291,8 @@ if dashboard=='Sentimental Analysis':
         st.title('Please enter your search 🔍')
     with find:
         search=st.text_input('', value='Apple')
+    with st.expander('Search tips'):
+        st.write('1. Search for any person or company name using double quotes (for example, "Tim Cook") \n 2. Use AND, OR boolean operators (for example, cat OR dog)')
     st.write(' ')
     st.write(' ')
     news_articles = newscatcherapi.get_search(q=search)
@@ -298,30 +300,34 @@ if dashboard=='Sentimental Analysis':
     article=news_articles['articles']
     for j in article:
         if j['language']=='en':
-            title=j['title']
-            author=j['author']
-            twitter=j['twitter_account']
-            media=j['media']
-            rights=j['rights']
-            date=j['published_date']
-            links=j['link']
-            summary=j['summary']
-            excerpt=j['excerpt']
-            scores = vader.polarity_scores(j['summary'])
-            x=tb.TextBlob(j['summary'])
-            scorestb=x.sentiment.polarity
-            st.title(title)
-            st.subheader(author)
-            st.write(date)
-            st.subheader(excerpt)
-            st.write(summary)
-            st.write(links)
-            st.write('Sentimental Score (Vader Analysis): ', scores)     
-            st.write('Sentimental Score (TextBlob Analysis): ', scorestb)
-            st.write(rights)
-            st.image(media)
-            st.write('____________________')
-            st.write(' ')
+            try:
+                title=j['title']
+                author=j['author']
+                twitter=j['twitter_account']
+                media=j['media']
+                rights=j['rights']
+                date=j['published_date']
+                links=j['link']
+                summary=j['summary']
+                excerpt=j['excerpt']
+                scores = vader.polarity_scores(j['summary'])
+                x=tb.TextBlob(j['summary'])
+                scorestb=x.sentiment.polarity
+                st.title(title)
+                st.subheader(author)
+                st.write(date)
+                st.subheader(excerpt)
+                st.write(summary)
+                st.write(links)
+                st.write('Sentimental Score (Vader Analysis): ', scores)     
+                st.write('Sentimental Score (TextBlob Analysis): ', scorestb)
+                st.write(rights)
+                st.image(media)
+                st.write('____________________')
+                st.write(' ')
+            except:
+                st.write('____________________')
+                st.write(' ')
     
 if dashboard=='Fake News Detection':
     st.title("Fake News Detection System")
@@ -347,6 +353,8 @@ if dashboard=='Our News':
         st.title('Please enter your search 🔍')
     with find:
         search=st.text_input('', value='Apple')
+    with st.expander('Search tips'):
+        st.write('1. Search for any person or company name using double quotes (for example, "Tim Cook") \n 2. Use AND, OR boolean operators (for example, cat OR dog)')
     st.write(' ')
     st.write(' ')
     news_articles = newscatcherapi.get_search(q=search)
@@ -354,22 +362,26 @@ if dashboard=='Our News':
     article=news_articles['articles']
     for j in article:
         if j['language']=='en':
-            title=j['title']
-            author=j['author']
-            twitter=j['twitter_account']
-            media=j['media']
-            rights=j['rights']
-            date=j['published_date']
-            links=j['link']
-            summary=j['summary']
-            excerpt=j['excerpt']
-            st.title(title)
-            st.subheader(author)
-            st.write(date)
-            st.subheader(excerpt)
-            st.write(summary)
-            st.write(links)
-            st.write(rights)
-            st.image(media)
-            st.write('____________________')
-            st.write(' ')
+            try:
+                title=j['title']
+                author=j['author']
+                twitter=j['twitter_account']
+                media=j['media']
+                rights=j['rights']
+                date=j['published_date']
+                links=j['link']
+                summary=j['summary']
+                excerpt=j['excerpt']
+                st.title(title)
+                st.subheader(author)
+                st.write(date)
+                st.subheader(excerpt)
+                st.write(summary)
+                st.write(links)
+                st.write(rights)
+                st.image(media)
+                st.write('____________________')
+                st.write(' ')
+            except:
+                st.write('____________________')
+                st.write(' ')
