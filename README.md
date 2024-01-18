@@ -1,0 +1,1 @@
+The Media Review is a web application developed in order to solve a world scale problem of fake news and its wide spread. We aim to provide a platform or a service where you can verify news for free, obtain news as well as get the overall tone of the news through sentimental analysis.
