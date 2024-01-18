@@ -2,7 +2,7 @@ streamlit
 numpy
 pandas
 hydralit
-sklearn
+scikit-learn
 newscatcherapi
 nltk
 textblob
